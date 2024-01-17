@@ -1,25 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
+    <div style={{ textAlign: 'center' }}>
+      <header style={{ backgroundColor: '#E68FAC', minHeight: '100vh', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', color: 'white' }}>
+
+        <h1 style={{ fontSize: '2.5rem' }}>LOVELANDIN</h1>
+        <p style={{ color: '#FFFF', marginBottom: '2.5rem', fontSize:'1.5rem' }}>
+          Zehrosla hemen barışmak için aşağıdaki butona tıklayabilirsiniz.
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+        <button
+          onClick={() => {
+            const whatsappNumarasi = '905520013027';
+            const message = 'selam zehlos... barışmak için iletişime geçmek istiyorum.';
+            window.location.href = `https://api.whatsapp.com/send?phone=${whatsappNumarasi}&text=${encodeURIComponent(message)}`;
+          }}
+          style={{ backgroundColor: '#4caf50', color: 'white', padding: '0.5rem 1rem', borderRadius: '0.25rem', cursor: 'pointer', transition: 'background-color 0.3s' }}
         >
-          Learn React
-        </a>
+         BARISBARISBARIS
+        </button>
       </header>
     </div>
   );
-}
+};
 
 export default App;
